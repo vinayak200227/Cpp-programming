@@ -1,0 +1,32 @@
+5. Give an expression for the runtime T (n) if the recurrence can be solved with the Master Theorem :
+   T (n) = 3T (n/3) + n/2
+
+// Answer //
+
+/*
+The given recurrence relation T(n) = 3T(n/3) + n/2 can be solved using the Master Theorem. 
+Let's express the runtime T(n) in terms of the Master Theorem:
+
+T(n) = a * T(n/b) + f(n)
+
+In this case, we have:
+a = 3
+b = 3
+f(n) = n/2
+
+Now, let's compare f(n) with n^log_b(a):
+
+n^log_b(a) = n^log_3(3) = n
+
+Since f(n) = n/2, it is smaller than n. Thus, we fall into Case 1 of the Master Theorem:
+
+If f(n) = O(n^c) for some constant c < log_b(a), then T(n) = Theta(n^log_b(a)).
+
+In our case, c = 1/2 and log_b(a) = log_3(3) = 1. Since c < log_b(a), we have f(n) = O(n^c).
+
+Therefore, according to the Master Theorem, the runtime T(n) for the given recurrence relation is:
+
+T(n) = Theta(n^log_b(a)) = Theta(n^1) = Theta(n).
+
+Hence, the runtime of the recurrence relation T(n) = 3T(n/3) + n/2 is Theta(n).
+*/

@@ -1,0 +1,24 @@
+4. What is the time complexity of the following code :
+
+void fun(int n)
+{
+for (int i = 0; i < n / 2; i++)
+for (int j = 1; j + n / 2 <= n; j++)
+for (int k = 1; k <= n; k = k * 2)
+cout << "Prateek Jain";
+}
+
+// Answer //
+
+/*
+The outermost loop runs n/2 times, which means it has a time complexity of O(n).
+
+The middle loop runs (n/2) - 1 times because j starts from 1 and goes up to n/2. So, its time complexity is O(n).
+
+The innermost loop runs log n times because k is doubled in each iteration (1, 2, 4, ..., n). So, its time complexity is O(log n).
+
+Therefore, when considering the nested loops, the overall time complexity of the code is O(n) * O(n) * O(log n), which simplifies to O(n^2 log n).
+
+Hence, the time complexity of the code is O(n^2 log n).
+
+*/

@@ -1,0 +1,20 @@
+2. What is the time complexity of the following code:
+int a = 0;
+for (i = 0; i < N; i++) {
+for (j = N; j > i; j--) {
+a = a + i + j;
+}
+}
+
+// Answer //
+
+/*
+The time complexity of the given code is O(N^2), where N is the number of iterations for the outer loop.
+
+The outer loop iterates N times, and for each iteration of the outer loop, the inner loop iterates N - i times. 
+As a result, the total number of iterations for the inner loop can be calculated as the sum of the first N natural numbers:
+
+(N - 1) + (N - 2) + ... + 1 = (N * (N - 1)) / 2
+
+Therefore, the time complexity of the code is O(N * (N - 1) / 2), which simplifies to O(N^2) asymptotically.
+*/

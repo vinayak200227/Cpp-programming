@@ -1,0 +1,43 @@
+6. Give an expression for the runtime T (n) if the recurrence can be solved with the Master Theorem :
+   T (n) = 6T (n/3) + n^2log n
+
+// Answer //
+
+/*
+The given recurrence relation T(n) = 6T(n/3) + n^2log n can be solved using the Master Theorem. 
+Let's express the runtime T(n) in terms of the Master Theorem:
+
+T(n) = a * T(n/b) + f(n)
+
+In this case, we have:
+a = 6
+b = 3
+f(n) = n^2log n
+
+Now, let's compare f(n) with n^log_b(a):
+
+n^log_b(a) = n^log_3(6)
+
+To determine the exponent of n in n^log_3(6), we can rewrite it as (n^log(6)) / (n^log(3)).
+
+Since the base of the logarithm does not affect the exponent, we can simplify it to n^(log(6) / log(3)).
+
+Now, let's compare f(n) with n^(log(6) / log(3)):
+
+f(n) = n^2log n
+n^(log(6) / log(3))
+
+Since f(n) has a higher growth rate than n^(log(6) / log(3)), it is larger.
+
+Thus, we fall into Case 3 of the Master Theorem:
+
+If f(n) = Omega(n^c) for some constant c > log_b(a), and if a * f(n/b) <= k * f(n) for some constant k < 1 and sufficiently large n, then T(n) = Theta(f(n)).
+
+In our case, c > log_b(a) since log_3(6) < 2 (c is the exponent of n in f(n), and log_b(a) is the exponent of n in n^log_b(a)).
+
+Therefore, according to the Master Theorem, the runtime T(n) for the given recurrence relation is:
+
+T(n) = Theta(f(n)) = Theta(n^2log n).
+
+Hence, the runtime of the recurrence relation T(n) = 6T(n/3) + n^2log n is Theta(n^2log n).
+*/

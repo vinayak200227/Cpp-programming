@@ -1,0 +1,43 @@
+9. Give an expression for the runtime T (n) if the recurrence can be solved with the Master Theorem :
+   T (n) = 7T (n/3) + n^2
+
+// Answer //
+
+/*
+The given recurrence relation T(n) = 7T(n/3) + n^2 can be solved using the Master Theorem. 
+Let's express the runtime T(n) in terms of the Master Theorem:
+
+T(n) = a * T(n/b) + f(n)
+
+In this case, we have:
+a = 7
+b = 3
+f(n) = n^2
+
+Now, let's compare f(n) with n^log_b(a):
+
+n^log_b(a) = n^log_3(7)
+
+To determine the exponent of n in n^log_3(7), we can rewrite it as (n^log(7)) / (n^log(3)).
+
+Since the base of the logarithm does not affect the exponent, we can simplify it to n^(log(7) / log(3)).
+
+Now, let's compare f(n) with n^(log(7) / log(3)):
+
+f(n) = n^2
+n^(log(7) / log(3))
+
+Since f(n) has the same growth rate as n^(log(7) / log(3)), we can consider it as the same order of magnitude.
+
+Thus, we fall into Case 2 of the Master Theorem:
+
+If f(n) = Theta(n^c log^k n) for some constants c and k >= 0, and if a * f(n/b) <= k * f(n) for sufficiently large n, then T(n) = Theta(f(n) log^k n).
+
+In our case, c = 2 and k = 0.
+
+Therefore, according to the Master Theorem, the runtime T(n) for the given recurrence relation is:
+
+T(n) = Theta(n^2 log^0 n) = Theta(n^2).
+
+Hence, the runtime of the recurrence relation T(n) = 7T(n/3) + n^2 is Theta(n^2).
+*/

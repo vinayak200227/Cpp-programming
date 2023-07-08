@@ -1,0 +1,32 @@
+7. Give an expression for the runtime T (n) if the recurrence can be solved with the Master Theorem :
+   T (n) = 4T (n/2) + n/ log n
+
+// Answer //
+
+/*
+The given recurrence relation T(n) = 4T(n/2) + n/log n can be solved using the Master Theorem. 
+Let's express the runtime T(n) in terms of the Master Theorem:
+
+T(n) = a * T(n/b) + f(n)
+
+In this case, we have:
+a = 4
+b = 2
+f(n) = n/log n
+
+Now, let's compare f(n) with n^log_b(a):
+
+n^log_b(a) = n^log_2(4) = n^2
+
+Since f(n) = n/log n, it is smaller than n^2. Thus, we fall into Case 1 of the Master Theorem:
+
+If f(n) = O(n^c) for some constant c < log_b(a), then T(n) = Theta(n^log_b(a)).
+
+In our case, c = 1 and log_b(a) = log_2(4) = 2. Since c < log_b(a), we have f(n) = O(n^c).
+
+Therefore, according to the Master Theorem, the runtime T(n) for the given recurrence relation is:
+
+T(n) = Theta(n^log_b(a)) = Theta(n^2).
+
+Hence, the runtime of the recurrence relation T(n) = 4T(n/2) + n/log n is Theta(n^2).
+*/
