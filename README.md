@@ -2,7 +2,7 @@
 
 This repository contains my solutions to various C++ programming problems. I have solved approximately 160 problems, covering a wide range of concepts and difficulty levels.
 
-Assignment 23 - Basics of C++
+Assignment 23 - Basics of C++  
 Assignment 24 - Functions in C++
 Assignment 25 - Classes and Objects
 Assignment 26 - Member function, static, constructor
